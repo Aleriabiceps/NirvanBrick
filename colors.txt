@@ -1,0 +1,4 @@
+#141414 - background color
+#dddddd - text color
+#185fc0 - headings
+#ca733e - accents

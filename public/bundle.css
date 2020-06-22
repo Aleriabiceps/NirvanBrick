@@ -1,0 +1,12 @@
+html, body {
+    font-family: "Monserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #141414;
+}
+
+* {
+    box-sizing: border-box;
+}
