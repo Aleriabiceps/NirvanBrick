@@ -13,19 +13,28 @@ export class Header extends Component {
     style() {
         return `
             header {
-                width: 100%;
-
                 display: flex;
-                justify-content: center;
+                justify-content: space-evenly;
+
+                position: fixed;
+                top: 0;
+                height: 85px;
+                width: 100%;
             }
 
             nav {
-                width: 100%;
-
                 display: flex;
                 justify-content: space-between;
 
-                margin: 35px;
+                width: 100%;
+                margin: 20px;
+            }
+
+            nav #navbar {
+                display: flex;
+                justify-content: space-between;
+
+                width: 100%;
             }
 
             nav a {
@@ -33,28 +42,70 @@ export class Header extends Component {
                 font-size: 20px;
                 font-weight: 100;
                 text-decoration: none;
+                text-transform: lowercase;
             }
 
             nav a:hover {
                 color: #ca733e;
             }
 
-            #logo {
+            nav #logo {
                 width: 50px;
                 height: 50px;
-                transform: translateY(-15px);
+                transform: translateY(-10px);
             }
 
-            #social-icons {
+            nav #social-icons {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
+
+                width: 100%;
             }
 
-            #social-icons img {
+            nav #social-icons img {
                 width: 25px;
                 height: 25px;
-                padding: 0px 10px 0px 10px;
+
+                margin: 0px 10px 0px 10px;
             }
+
+            nav #burger {
+                display: none;
+                cursor: pointer;
+
+            }
+
+            @media screen and (max-width: 800px) {
+
+                nav #burger {
+                    display: block;
+                }
+
+                nav #links {
+                    display: none;
+                }
+
+                nav #navbar {
+                    justify-content: flex-start;
+                }
+                nav #social-icons {
+                    display: none;
+                }
+
+                #navbar #links.mobile {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    position: fixed;
+                    top: 85px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+
         `;
     }
 
@@ -64,25 +115,44 @@ export class Header extends Component {
             
             <header>
                 <nav>
-                    <a href="/">Home</a>
-                    
-                    <a href="/">
-                        <img id="logo" src="${nirvan_icon}" alt="Nirvan Brickseek" />
-                    </a>
+                    <div id="navbar">
+                        <div id="links">
+                            <a href="/">
+                                <span>Home</span>
+                            </a>
+                        </div>
 
-                    <div id="social-icons">
-                        <a href="https://twitter.com/nirvanbrickseek">
-                            <img src="${twitter_icon}" alt="Nirvan Brickseek's Twitter" />
-                        </a>
-
-                        <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en">
-                            <img src="${tiktok_icon}" alt="Nirvan Brickseek's Tiktok" />
+                        <a href="/">
+                            <img id="logo" src="${nirvan_icon}" alt="Nirvan's Brickseek" />
                         </a>
                     </div>
 
+                    <div id="social-icons">
+                        <a href="https://twitter.com/nirvanbrickseek" target="_blank">
+                            <img src="${twitter_icon}" alt="Twitter" />
+                        </a>
+
+                        <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en" target="_blank">
+                            <img src="${tiktok_icon}" alt="Tiktok" />
+                        </a>
+                    </div>
+
+                    <hamburger-menu id="burger" onclick=${this.toggleMobile.bind(this)}></hamburger-menu>
                 </nav>
             </header>
         `;
     }
-}
 
+    toggleMobile(event) {
+        event.preventDefault();
+
+        const container = this.root.querySelector("#links");
+        container.classList.toggle("mobile");
+
+        if(container.classList.contains("mobile")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }
+}

@@ -1,9 +1,11 @@
 import { html, render, Component } from "jolt";
+import { HamburgerMenu } from "./components/HamburgerMenu";
 import { Header } from "./components/header/Header";
 import { Banner } from "./components/banner/Banner";
 import "./app.css";
 
 /* register components */
+Component.register("hamburger-menu", HamburgerMenu);
 Component.register("nirvan-header", Header);
 Component.register("nirvan-banner", Banner);
 
