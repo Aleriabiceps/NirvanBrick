@@ -4,6 +4,7 @@ import { Header } from "./components/header/Header";
 import { Banner } from "./components/banner/Banner";
 import { Offerings } from "./components/Offerings";
 import { Testimonials } from "./components/Testimonials";
+import { FAQ } from "./components/FAQ";
 
 /* register components */
 Component.register("hamburger-menu", HamburgerMenu);
@@ -11,6 +12,7 @@ Component.register("nirvan-header", Header);
 Component.register("nirvan-banner", Banner);
 Component.register("nirvan-offerings", Offerings);
 Component.register("nirvan-testimonials", Testimonials);
+Component.register("nirvan-faq", FAQ);
 
 /**
  * App Component
@@ -21,6 +23,7 @@ function App() {
         <nirvan-banner></nirvan-banner>
         <nirvan-offerings></nirvan-offerings>
         <nirvan-testimonials></nirvan-testimonials>
+        <nirvan-faq></nirvan-faq>
     `;
 }
 
