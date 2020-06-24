@@ -64,6 +64,28 @@ export class Banner extends Component {
                     background-color: #dddddd;
                     color: black;
                 }
+
+                #join-us {
+                    background: transparent;
+                    border: 2px solid #185fc0;
+                    border-radius: 4px;
+
+                    font-family: "Futura", sans-serif;
+                    color: #dddddd;
+                    font-size: 1.2rem;
+                    
+                    padding: 0.3rem;
+                    
+
+                    cursor: pointer;
+
+                    user-select: none;
+                }
+
+                #join-us:hover {
+                    background-color: #185fc0;
+                    color: black;
+                }
             </style>
         `;
     }
@@ -81,6 +103,7 @@ export class Banner extends Component {
                     <button>Coming Soon</button>
                     <button>Coming Soon</button>
                 </div>
+                <button id="join-us" onclick=${() => window.open("https://discord.com/invite/eGA4PMS", "_blank")}>Join Our Discord Waiting Room</button>
             </section>
         `;
     }

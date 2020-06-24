@@ -6,7 +6,8 @@
     "build": "rollup -c ./config/rollup.config.js",
     "watch": "rollup -c ./config/rollup.config.js -w",
     "lint": "eslint src -c ./config/.eslintrc.js",
-    "start": "jolt-server --root public --live --spa",
+    "start:dev": "jolt-server --root public --live --spa",
+    "start": "node server.js",
     "dev": "npm-run-all --parallel watch start"
   },
   "devDependencies": {

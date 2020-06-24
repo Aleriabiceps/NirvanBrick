@@ -119,7 +119,7 @@ export class Offerings extends Component {
                         <p>
                             It’s easy for a group to pay their way to the top providers. On top of the info and items, through our connections,
                             <u>we make getting and reselling items as easy as possible.</u> We have groupbuys for some of the best tools in the game,
-                            bulk cashout providers, lengthy guides for every selling platform, and many reselling items,
+                            bulk cashout providers, lengthy guides for every selling platform,
                             along with an abundance of tools like ebay viewers and <u>free slots for all members.</u>
                         </p>
                     </div>

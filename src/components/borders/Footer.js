@@ -1,5 +1,7 @@
 /* imports */
 import { html, Component } from "jolt";
+import twitter_icon from "./assets/twitter_icon.svg";
+import tiktok_icon from "./assets/tiktok_icon.svg";
 
 /**
  * Footer Component
@@ -19,6 +21,7 @@ export class Footer extends Component {
 
                     margin-top: 75px;
                 }
+                
 
                 nav a {
                     text-decoration: none;
@@ -31,6 +34,21 @@ export class Footer extends Component {
                 nav a:hover {
                     color: #ca733e;
                     border-bottom: 2px solid #ca733e;
+                }
+
+                #social-icons {
+                   margin-top: 20px;
+                }
+
+                #social-icons a {
+                    text-decoration: none;
+                }
+
+                #social-icons img {
+                    width: 25px;
+                    height: 25px;
+
+                    margin: 0px 10px 0px 10px;
                 }
 
                 span {
@@ -61,6 +79,15 @@ export class Footer extends Component {
                 <nav>
                     <a href="/">Home</a>
                 </nav>
+                <div id="social-icons">
+                    <a href="https://twitter.com/nirvanbrickseek" target="_blank" rel="noreferrer">
+                        <img src="${twitter_icon}" alt="Follow us on Twitter" />
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en" target="_blank" rel="noreferrer">
+                        <img src="${tiktok_icon}" alt="Follow us on Tiktok" />
+                    </a>
+                </div>
                 <span>
                     Copyright &copy; 2020 Nirvan's Brickseek LLC | 
                     <a href="https://docs.google.com/document/d/13t5PgRfGlZ6fPi9W6UmFA2tMbMkjZMIG1CIgCJLuMx4/edit" target="_blank" rel="noreferrer">

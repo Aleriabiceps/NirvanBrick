@@ -46,9 +46,6 @@ export class Testimonials extends Component {
                     
                     padding: 20px;
                     font-size: 20px;
-                    
-                    border: 2px solid #185fc0;
-                    border-radius: 30px;
 
                     color: #dddddd;
                 }

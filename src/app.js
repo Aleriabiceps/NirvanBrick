@@ -1,11 +1,11 @@
 import { html, render, Component } from "jolt";
 import { HamburgerMenu } from "./components/HamburgerMenu";
-import { Header } from "./components/header/Header";
+import { Header } from "./components/borders/Header";
 import { Banner } from "./components/banner/Banner";
 import { Offerings } from "./components/Offerings";
 import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/borders/Footer";
 
 /* register components */
 Component.register("hamburger-menu", HamburgerMenu);
