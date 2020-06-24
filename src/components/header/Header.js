@@ -175,6 +175,8 @@ export class Header extends Component {
                 } else {
                     this.root.querySelector("#logo").style.visibility = "visible";
                 }
+            }, {
+                passive: true
             });
         }
     }
