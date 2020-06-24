@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nirvan Brickseek</title>
-    <link rel="icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./bundle.css" />
+    <title>Nirvan's Brickseek</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
     <style>
         @font-face {
             font-family: Futura;
             font-weight: bold;
             src: url("./futura-pt-bold-oblique.otf") format("opentype");
+            font-display: swap;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            font-family: "Futura", sans-serif;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+        }
+
+        * {
+            box-sizing: border-box;
         }
     </style>
 </head>

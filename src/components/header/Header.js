@@ -11,107 +11,118 @@ import tiktok_icon from "./assets/tiktok_icon.svg";
 export class Header extends Component {
 
     style() {
-        return `
-            header {
-                display: flex;
-                justify-content: space-evenly;
+        return html`
+            <style>
+                header {
+                    display: flex;
+                    justify-content: space-evenly;
 
-                position: fixed;
-                top: 0;
-                height: 85px;
-                width: 100%;
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-
-                width: 100%;
-                margin: 20px;
-            }
-
-            nav #navbar {
-                display: flex;
-                justify-content: space-between;
-
-                width: 100%;
-            }
-
-            nav a {
-                color: #dddddd;
-                font-size: 20px;
-                font-weight: 100;
-                text-decoration: none;
-                text-transform: lowercase;
-            }
-
-            nav a:hover {
-                color: #ca733e;
-            }
-
-            nav #logo {
-                width: 50px;
-                height: 50px;
-                transform: translateY(-10px);
-            }
-
-            nav #social-icons {
-                display: flex;
-                justify-content: flex-end;
-
-                width: 100%;
-            }
-
-            nav #social-icons img {
-                width: 25px;
-                height: 25px;
-
-                margin: 0px 10px 0px 10px;
-            }
-
-            nav #burger {
-                display: none;
-                cursor: pointer;
-
-            }
-
-            @media screen and (max-width: 800px) {
-
-                nav #burger {
-                    display: block;
+                    position: fixed;
+                    top: 0;
+                    height: 85px;
+                    width: 100%;
                 }
 
-                nav #links {
-                    display: none;
+                nav {
+                    display: flex;
+                    justify-content: space-between;
+
+                    width: 100%;
+                    margin: 20px;
                 }
 
                 nav #navbar {
-                    justify-content: flex-start;
-                }
-                nav #social-icons {
-                    display: none;
-                }
-
-                #navbar #links.mobile {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
+                    justify-content: space-between;
 
-                    position: fixed;
-                    top: 85px;
                     width: 100%;
-                    height: 100%;
                 }
-            }
 
+                nav a {
+                    color: #dddddd;
+                    font-size: 20px;
+                    font-weight: 100;
+                    text-decoration: none;
+                    text-transform: lowercase;
+                }
 
+                nav a:hover {
+                    color: #ca733e;
+                }
+
+                nav #links a {
+                    border-bottom: 2px solid #dddddd;
+                }
+
+                nav #links a:hover {
+                    border-bottom: 2px solid #ca733e;
+                }
+
+                nav #logo {
+                    width: 50px;
+                    height: 50px;
+                    transform: translateY(-10px);
+                }
+
+                nav #social-icons {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    width: 100%;
+                }
+
+                nav #social-icons img {
+                    width: 25px;
+                    height: 25px;
+
+                    margin: 0px 10px 0px 10px;
+                }
+
+                nav #burger {
+                    display: none;
+                    cursor: pointer;
+
+                }
+
+                @media screen and (max-width: 800px) {
+
+                    nav #burger {
+                        display: block;
+                    }
+
+                    nav #links {
+                        display: none;
+                    }
+
+                    nav #navbar {
+                        justify-content: flex-start;
+                    }
+                    nav #social-icons {
+                        display: none;
+                    }
+
+                    #navbar #links.mobile {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        position: fixed;
+                        top: 85px;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        background-color: #141414;
+                    }
+                }
+            </style>
         `;
     }
 
     render() {
         return html`
-            <style>${this.style()}</style>
+            ${this.style()}
             
             <header>
                 <nav>
@@ -128,12 +139,12 @@ export class Header extends Component {
                     </div>
 
                     <div id="social-icons">
-                        <a href="https://twitter.com/nirvanbrickseek" target="_blank">
-                            <img src="${twitter_icon}" alt="Twitter" />
+                        <a href="https://twitter.com/nirvanbrickseek" target="_blank" rel="noreferrer">
+                            <img src="${twitter_icon}" alt="Follow us on Twitter" />
                         </a>
 
-                        <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en" target="_blank">
-                            <img src="${tiktok_icon}" alt="Tiktok" />
+                        <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en" target="_blank" rel="noreferrer">
+                            <img src="${tiktok_icon}" alt="Follow us on Tiktok" />
                         </a>
                     </div>
 
@@ -149,10 +160,22 @@ export class Header extends Component {
         const container = this.root.querySelector("#links");
         container.classList.toggle("mobile");
 
-        if(container.classList.contains("mobile")) {
+        if (container.classList.contains("mobile")) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "auto";
+        }
+    }
+
+    didLoad() {
+        if (window.innerWidth > 800) {
+            window.addEventListener("scroll", () => {
+                if (window.pageYOffset > 130) {
+                    this.root.querySelector("#logo").style.visibility = "hidden";
+                } else {
+                    this.root.querySelector("#logo").style.visibility = "visible";
+                }
+            });
         }
     }
 }
