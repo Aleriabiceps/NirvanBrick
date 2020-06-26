@@ -103,7 +103,7 @@ export class Banner extends Component {
                     <button>Coming Soon</button>
                     <button>Coming Soon</button>
                 </div>
-                <button id="join-us" onclick=${() => window.open("https://discord.com/invite/eGA4PMS", "_blank")}>Join Our Discord Waiting Room</button>
+                <button id="join-us" onclick=${() => window.open("https://discord.gg/EbfRKme", "_blank")}>Join Our Discord Waiting Room</button>
             </section>
         `;
     }

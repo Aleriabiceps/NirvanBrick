@@ -4,7 +4,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import url from "@rollup/plugin-url";
 import css from "rollup-plugin-css-bundle";
 import minifyTemplate from "rollup-plugin-minify-html-literals";
-import includepaths from "rollup-plugin-includepaths";
 import { terser } from "rollup-plugin-terser";
 
 /* build config */
@@ -40,11 +39,6 @@ export default {
 
         /* minifies jolt template literals */
         minifyTemplate(),
-
-        /* allow importing named files */
-        includepaths({
-            paths: [ "./libs" ]
-        }),
 
         /* minifies your bundled source code */
         terser()
