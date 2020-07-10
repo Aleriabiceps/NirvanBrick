@@ -25,7 +25,7 @@ function App() {
         <nirvan-banner></nirvan-banner>
         <nirvan-offerings></nirvan-offerings>
         <nirvan-testimonials></nirvan-testimonials>
-        <nirvan-faq></nirvan-faq>
+        <nirvan-faq id="faq"></nirvan-faq>
         <nirvan-footer></nirvan-footer>
     `;
 }

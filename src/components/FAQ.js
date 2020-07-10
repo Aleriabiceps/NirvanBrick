@@ -31,6 +31,10 @@ export class FAQ extends Component {
                     width: 80%;
                 }
 
+                .q-a {
+                    padding: 10px;
+                }
+
                 .q-a h3{
                     color: #185fc0;
                     font-size: 30px;
@@ -46,6 +50,17 @@ export class FAQ extends Component {
                     text-decoration: none;
 
                     border-bottom: 2px solid #ca733e;
+                }
+
+                @keyframes fade-border {
+                    0% { border-color: #ca733e; }
+                    100% { border-color: transparent; }
+                }
+
+                .fade-border-element {
+                    border: 2px solid transparent;
+                    border-radius: 30px;
+                    animation: fade-border 2.0s;
                 }
 
                 @media screen and (max-width: 800px) {
@@ -73,7 +88,7 @@ export class FAQ extends Component {
                             with the intentions of reselling them on sites like ebay. 
                         </p>
                     </div>
-                    <div class="q-a">
+                    <div id="how-do-i-join" class="q-a">
                         <h3>How do I join?</h3>
                         <p>
                             Memberships are 20 dollars a month and will auto charge every month unless cancelled.

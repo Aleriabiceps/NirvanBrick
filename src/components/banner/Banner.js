@@ -51,7 +51,8 @@ export class Banner extends Component {
                     font-size: 1.2rem;
                     
                     padding: 0.3rem;
-                    width: 160px;
+
+                    width: 300px;
 
                     cursor: pointer;
 
@@ -65,6 +66,13 @@ export class Banner extends Component {
                     color: black;
                 }
 
+                #buttons button:hover span {
+                    display: none;
+                }
+                #buttons button:hover:before {
+                    content: "Sold Out!";
+                }
+
                 #join-us {
                     background: transparent;
                     border: 2px solid #185fc0;
@@ -75,6 +83,8 @@ export class Banner extends Component {
                     font-size: 1.2rem;
                     
                     padding: 0.3rem;
+
+                    width: 300px;
                     
 
                     cursor: pointer;
@@ -100,11 +110,17 @@ export class Banner extends Component {
                     <p>Make a second source of income on your own time.</p>
                 </div>
                 <div id="buttons">
-                    <button>Coming Soon</button>
-                    <button>Coming Soon</button>
+                    <button onclick=${this.scrollToJoin}><span>Buy Membership</span></button>
                 </div>
-                <button id="join-us" onclick=${() => window.open("https://discord.gg/EbfRKme", "_blank")}>Join Our Discord Waiting Room</button>
+                <button id="join-us" onclick=${() => window.open("https://discord.gg/WFV4DQz", "_blank")}>Join Our Discord Waiting Room</button>
             </section>
         `;
+    }
+
+    scrollToJoin() {
+        const element = document.querySelector("#faq")
+        const question = element.root.querySelector("#how-do-i-join");
+        element.scrollIntoView();
+        question.classList.toggle("fade-border-element");
     }
 }

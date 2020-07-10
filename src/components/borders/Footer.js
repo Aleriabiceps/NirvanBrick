@@ -2,6 +2,7 @@
 import { html, Component } from "jolt";
 import twitter_icon from "./assets/twitter_icon.svg";
 import tiktok_icon from "./assets/tiktok_icon.svg";
+import instagram_icon from "./assets/instagram_icon.svg";
 
 /**
  * Footer Component
@@ -86,6 +87,9 @@ export class Footer extends Component {
 
                     <a href="https://www.tiktok.com/@nirvansbrickseek?lang=en" target="_blank" rel="noreferrer">
                         <img src="${tiktok_icon}" alt="Follow us on Tiktok" />
+                    </a>
+                    <a href="https://instagram.com/nirvansbrickseek" target="_blank" rel="noreferrer">
+                        <img src="${instagram_icon}" alt="Follow us on Instagram" />
                     </a>
                 </div>
                 <span>
